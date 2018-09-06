@@ -1,6 +1,6 @@
-package carserviceproject.carservice.model;
+package carserviceproject.carservice.models;
 
-public class Person {
+public class Person extends BasicEntity{
 
     private String name;
     private String lastName;
