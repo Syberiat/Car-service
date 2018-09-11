@@ -4,7 +4,7 @@ import carserviceproject.carservice.models.BasicEntity;
 
 import java.util.*;
 
-public class AbstractServiceMap<Id extends Long,T extends BasicEntity> {
+public abstract class AbstractServiceMap<T extends BasicEntity, Id extends Long> {
 
     private Map<Long,T> map = new HashMap<>();
 

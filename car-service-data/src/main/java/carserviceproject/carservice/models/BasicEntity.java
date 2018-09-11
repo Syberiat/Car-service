@@ -3,7 +3,7 @@ package carserviceproject.carservice.models;
 import java.io.Serializable;
 
 public class BasicEntity implements Serializable {
-    Long id;
+    private Long id;
 
     public Long getId() {
         return id;
