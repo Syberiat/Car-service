@@ -1,5 +1,8 @@
 package carserviceproject.carservice.models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class CarType extends BasicEntity{
 
     private String brand;
@@ -11,4 +14,5 @@ public class CarType extends BasicEntity{
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
 }

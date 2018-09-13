@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.Set;
 
 @Service
-public class ServiceEmployeeServiceImpl extends AbstractServiceMap<ServiceEmployee, Long> implements ServiceEmployeeService {
+public class ServiceEmployeeServiceMapImpl extends AbstractServiceMap<ServiceEmployee, Long> implements ServiceEmployeeService {
 
 
     @Override

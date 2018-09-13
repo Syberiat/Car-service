@@ -1,10 +1,15 @@
 package carserviceproject.carservice.models;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
 public class Owner extends Person {
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Car> cars = new HashSet<>();
 
     private String adress;
@@ -42,4 +47,5 @@ public class Owner extends Person {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
 }

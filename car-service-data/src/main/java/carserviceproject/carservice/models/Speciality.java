@@ -1,5 +1,8 @@
 package carserviceproject.carservice.models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Speciality extends BasicEntity {
 
     private String description;
@@ -11,4 +14,5 @@ public class Speciality extends BasicEntity {
     public void setDescription(String description) {
         this.description = description;
     }
+
 }

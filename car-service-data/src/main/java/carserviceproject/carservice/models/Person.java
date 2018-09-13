@@ -1,5 +1,8 @@
 package carserviceproject.carservice.models;
 
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
 public class Person extends BasicEntity{
 
     private String name;
