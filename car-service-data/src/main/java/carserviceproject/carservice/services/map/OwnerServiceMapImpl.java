@@ -2,11 +2,13 @@ package carserviceproject.carservice.services.map;
 
 import carserviceproject.carservice.models.Owner;
 import carserviceproject.carservice.services.OwnerService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMapImpl extends AbstractServiceMap<Owner, Long> implements OwnerService {
 
     @Override

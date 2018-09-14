@@ -1,26 +1,15 @@
 package carserviceproject.carservice.models;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.MappedSuperclass;
 
+@Getter
+@Setter
 @MappedSuperclass
 public class Person extends BasicEntity{
 
     private String name;
     private String lastName;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 }

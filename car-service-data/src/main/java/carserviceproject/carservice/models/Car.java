@@ -1,10 +1,17 @@
 package carserviceproject.carservice.models;
 
+import lombok.*;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 public class Car extends BasicEntity{
 
@@ -18,36 +25,4 @@ public class Car extends BasicEntity{
     private Owner owner;
     //@Temporal()
     private LocalDate age;
-
-    public CarType getCarType() {
-        return carType;
-    }
-
-    public void setCarType(CarType carType) {
-        this.carType = carType;
-    }
-
-    public Owner getOwner() {
-        return owner;
-    }
-
-    public void setOwner(Owner owner) {
-        this.owner = owner;
-    }
-
-    public LocalDate getAge() {
-        return age;
-    }
-
-    public void setAge(LocalDate age) {
-        this.age = age;
-    }
-
-    public Set<Visit> getVisits() {
-        return visits;
-    }
-
-    public void setVisits(Set<Visit> visits) {
-        this.visits = visits;
-    }
 }
