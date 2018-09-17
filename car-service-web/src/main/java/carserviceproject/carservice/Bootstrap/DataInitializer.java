@@ -58,7 +58,7 @@ public class DataInitializer implements CommandLineRunner {
 
         Car car1 = new Car();
         car1.setCarType(ct2);
-        car1.setAge(LocalDate.now());
+        car1.setAge(5);
         car1.setOwner(owner1);
         carService.save(car1);
 
@@ -72,7 +72,7 @@ public class DataInitializer implements CommandLineRunner {
 
         Car car2 = new Car();
         car2.setCarType(ct1);
-        car2.setAge(LocalDate.now());
+        car2.setAge(3);
         car2.setOwner(owner2);
         carService.save(car2);
 
@@ -96,7 +96,7 @@ public class DataInitializer implements CommandLineRunner {
         serviceEmployeeService.save(se2);
 
         Visit v2 = new Visit();
-        v2.setDescription("nmalowanie błotnika");
+        v2.setDescription("malowanie błotnika");
         v2.setDateVisit(LocalDate.now());
         v2.setCar(car1);
         v2.setServiceEmployee(se2);

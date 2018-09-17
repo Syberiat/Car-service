@@ -26,4 +26,5 @@ public class Visit extends BasicEntity {
     @ManyToOne
     @JoinColumn(name = "serviceEmployee_id")
     private ServiceEmployee serviceEmployee;
+
 }

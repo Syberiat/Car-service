@@ -22,4 +22,8 @@ public class ServiceEmployee extends Person{
 
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Visit> visits = new HashSet<>();
+
+    public String toString() {
+        return " imię " + getName() + " nazwisko " + getLastName();
+    }
 }

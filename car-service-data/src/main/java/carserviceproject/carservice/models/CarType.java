@@ -13,4 +13,8 @@ import javax.persistence.Entity;
 public class CarType extends BasicEntity{
 
     private String brand;
+
+    public String toString() {
+        return "" + brand;
+    }
 }

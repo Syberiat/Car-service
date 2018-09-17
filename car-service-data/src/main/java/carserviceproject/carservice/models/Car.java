@@ -1,9 +1,11 @@
 package carserviceproject.carservice.models;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,7 +13,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
+//@Builder
 @Entity
 public class Car extends BasicEntity{
 
@@ -24,5 +26,10 @@ public class Car extends BasicEntity{
     @JoinColumn(name = "owner_id")
     private Owner owner;
     //@Temporal()
-    private LocalDate age;
+    private int age;
+
+    public String toString() {
+
+        return carType + " właściciel " + owner;
+    }
 }
