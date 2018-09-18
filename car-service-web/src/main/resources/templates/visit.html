@@ -8,7 +8,7 @@
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
           th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
 
-    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
@@ -21,7 +21,7 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h1 class="panel-title">My Recipes!</h1>
+                    <h1 class="panel-title">Visits</h1>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -39,9 +39,10 @@
                                 <td th:text="${visit.id}"></td>
                                 <td th:text="${visit.dateVisit}"></td>
                                 <td th:text="${visit.description}"></td>
-                                <td><a th:href="@{'/car/showCar' + ${visit.id}}"><p th:text="${visit.car}"></p></a></td>
-                                <td><a th:href="@{'/serviceEmployee/showServiceEmployee' + ${visit.id}}"><p
-                                        th:text="${visit.serviceEmployee}"></p></a></td>
+                                <td><a th:href="@{'/car/showCar/' + ${visit.id}}"><p th:text="${visit.getCar()}"></p>
+                                </a></td>
+                                <td><a th:href="@{'/serviceEmployee/showServiceEmployee/' + ${visit.id}}"><p
+                                        th:text="${visit.getServiceEmployee()}"></p></a></td>
                             </tr>
                         </table>
                     </div>

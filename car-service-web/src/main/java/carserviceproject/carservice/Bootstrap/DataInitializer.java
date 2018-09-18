@@ -80,6 +80,7 @@ public class DataInitializer implements CommandLineRunner {
         se1.setName("Mateusz");
         se1.setLastName("Jakubowski");
         se1.getSpeciality().add(s1);
+
         serviceEmployeeService.save(se1);
 
         Visit v1 = new Visit();
@@ -88,6 +89,8 @@ public class DataInitializer implements CommandLineRunner {
         v1.setCar(car2);
         v1.setServiceEmployee(se1);
         visitServis.save(v1);
+        se1.getVisits().add(v1);
+        serviceEmployeeService.save(se1);
 
         ServiceEmployee se2 = new ServiceEmployee();
         se2.setName("Winicjusz");
@@ -101,6 +104,8 @@ public class DataInitializer implements CommandLineRunner {
         v2.setCar(car1);
         v2.setServiceEmployee(se2);
         visitServis.save(v2);
+        se2.getVisits().add(v2);
+        serviceEmployeeService.save(se2);
 
     }
 }

@@ -13,4 +13,9 @@ import javax.persistence.Entity;
 public class Speciality extends BasicEntity {
 
     private String description;
+
+    @Override
+    public String toString() {
+        return description;
+    }
 }

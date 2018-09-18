@@ -27,4 +27,8 @@ public class Visit extends BasicEntity {
     @JoinColumn(name = "serviceEmployee_id")
     private ServiceEmployee serviceEmployee;
 
+    @Override
+    public String toString() {
+        return dateVisit + " " + description + " " + car;
+    }
 }
