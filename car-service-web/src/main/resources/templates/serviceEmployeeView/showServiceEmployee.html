@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>car side</title>
+    <title>show service employee side</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
@@ -20,7 +20,7 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h1 class="panel-title">car description</h1>
+                    <h1 class="panel-title">Service Employee</h1>
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -28,16 +28,20 @@
                             <thead class="thead-inverse">
                             <tr>
                                 <td>ID</td>
-                                <td>Typ samochodu</td>
-                                <td>Właściciel</td>
-                                <td>Wiek</td>
+                                <td>Imię</td>
+                                <td>Nazwisko</td>
+                                <td>Specjalizacje</td>
+                                <td>Odbyte wizyty</td>
                             </tr>
                             </thead>
-                            <tr th:each="car : ${visit.getCar()}">
-                                <td th:text="${car.id}"></td>
-                                <td th:text="${car.carType}"></td>
-                                <td th:text="${car.owner}"></td>
-                                <td th:text="${car.age}"></td>
+                            <tr>
+                                <td th:text="${serviceEmpl.id}"></td>
+                                <td th:text="${serviceEmpl.name}"></td>
+                                <td th:text="${serviceEmpl.lastName}"></td>
+                                <td th:text="${serviceEmpl.getSpeciality()}"></td>
+                                <td th:text="${serviceEmpl.getVisits()}"></td>
+                                <td><a href="#"
+                                       th:href="@{'/serviceEmployee/' + ${serviceEmpl.id} + '/update'}">Update</a></td>
                             </tr>
                         </table>
                     </div>

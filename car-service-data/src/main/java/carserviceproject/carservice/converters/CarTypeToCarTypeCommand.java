@@ -8,11 +8,11 @@ import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CarTypeToCarCommand implements Converter<CarType, CarTypeCommand> {
+public class CarTypeToCarTypeCommand implements Converter<CarType, CarTypeCommand> {
 
-    @Override
-    @Nullable
     @Synchronized
+    @Nullable
+    @Override
     public CarTypeCommand convert(CarType carType) {
         if (carType == null) {
             return null;

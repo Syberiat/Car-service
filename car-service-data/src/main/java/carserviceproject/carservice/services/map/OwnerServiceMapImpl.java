@@ -1,5 +1,6 @@
 package carserviceproject.carservice.services.map;
 
+import carserviceproject.carservice.commands.OwnerCommand;
 import carserviceproject.carservice.models.Owner;
 import carserviceproject.carservice.services.OwnerService;
 import org.springframework.context.annotation.Profile;
@@ -38,6 +39,16 @@ public class OwnerServiceMapImpl extends AbstractServiceMap<Owner, Long> impleme
 
     @Override
     public Owner findByLastName(String lastName) {
+        return null;
+    }
+
+    @Override
+    public OwnerCommand saveOwnerCommand(OwnerCommand command) {
+        return null;
+    }
+
+    @Override
+    public OwnerCommand findByIdOwnerCommand(Long l) {
         return null;
     }
 }

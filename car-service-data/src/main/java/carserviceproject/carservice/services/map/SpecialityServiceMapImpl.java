@@ -1,5 +1,6 @@
 package carserviceproject.carservice.services.map;
 
+import carserviceproject.carservice.commands.SpecialityCommand;
 import carserviceproject.carservice.models.Speciality;
 import carserviceproject.carservice.services.SpecialityService;
 import org.springframework.context.annotation.Profile;
@@ -34,5 +35,15 @@ public class SpecialityServiceMapImpl extends AbstractServiceMap<Speciality, Lon
     @Override
     public Speciality save(Speciality object) {
         return super.save(object);
+    }
+
+    @Override
+    public SpecialityCommand saveSpecialityCommand(SpecialityCommand command) {
+        return null;
+    }
+
+    @Override
+    public SpecialityCommand findByIdSpecialityCommand(Long l) {
+        return null;
     }
 }

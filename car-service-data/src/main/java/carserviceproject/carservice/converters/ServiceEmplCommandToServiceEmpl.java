@@ -11,15 +11,13 @@ import org.springframework.stereotype.Component;
 public class ServiceEmplCommandToServiceEmpl implements Converter<ServiceEmployeeCommand, ServiceEmployee> {
 
     private SpecialityCommandToSpeciality specialityConverter;
-    private VisitCommandToVisit visitConverter;
 
-    public ServiceEmplCommandToServiceEmpl(SpecialityCommandToSpeciality specialityConverter, VisitCommandToVisit visitConverter) {
+    public ServiceEmplCommandToServiceEmpl(SpecialityCommandToSpeciality specialityConverter) {
         this.specialityConverter = specialityConverter;
-        this.visitConverter = visitConverter;
     }
 
-    @Nullable
     @Synchronized
+    @Nullable
     @Override
     public ServiceEmployee convert(ServiceEmployeeCommand serviceEmployeeCommand) {
         if (serviceEmployeeCommand == null) {
@@ -30,7 +28,6 @@ public class ServiceEmplCommandToServiceEmpl implements Converter<ServiceEmploye
         serviceEmployee.setName(serviceEmployeeCommand.getName());
         serviceEmployee.setId(serviceEmployeeCommand.getId());
         serviceEmployeeCommand.getSpecialityCommands().forEach(p -> serviceEmployee.getSpeciality().add(specialityConverter.convert(p)));
-        serviceEmployeeCommand.getVisitCommands().forEach(p -> serviceEmployee.getVisits().add(visitConverter.convert(p)));
 
         return serviceEmployee;
     }

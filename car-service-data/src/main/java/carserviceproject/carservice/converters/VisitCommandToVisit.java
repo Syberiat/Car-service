@@ -18,8 +18,8 @@ public class VisitCommandToVisit implements Converter<VisitCommand, Visit> {
         this.carConverter = carConverter;
     }
 
-    @Nullable
     @Synchronized
+    @Nullable
     @Override
     public Visit convert(VisitCommand visitCommand) {
         if (visitCommand == null) {
@@ -29,7 +29,7 @@ public class VisitCommandToVisit implements Converter<VisitCommand, Visit> {
         visit.setDateVisit(visitCommand.getDateVisit());
         visit.setServiceEmployee(servisEmployeeConverter.convert(visitCommand.getServiceEmployeeCommand()));
         visit.setCar(carConverter.convert(visitCommand.getCarCommand()));
-        visit.setDescription(visitCommand.getDecsription());
+        visit.setDescription(visitCommand.getDescription());
         visit.setId(visitCommand.getId());
 
         return visit;

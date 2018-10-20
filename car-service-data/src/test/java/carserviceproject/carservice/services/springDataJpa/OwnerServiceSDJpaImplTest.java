@@ -1,5 +1,7 @@
 package carserviceproject.carservice.services.springDataJpa;
 
+import carserviceproject.carservice.converters.OwnerCommandToOwner;
+import carserviceproject.carservice.converters.OwnerToOwnerCommand;
 import carserviceproject.carservice.models.Owner;
 import carserviceproject.carservice.repositories.OwnerRepository;
 import org.junit.Before;
@@ -16,13 +18,15 @@ public class OwnerServiceSDJpaImplTest {
 
     @Mock
     OwnerRepository ownerRepository;
+    OwnerToOwnerCommand ownerToOwnerCommand;
+    OwnerCommandToOwner ownerCommandToOwner;
 
     private OwnerServiceSDJpaImpl ownerServiceSDJpa;
 
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        ownerServiceSDJpa = new OwnerServiceSDJpaImpl(ownerRepository);
+        ownerServiceSDJpa = new OwnerServiceSDJpaImpl(ownerRepository, ownerCommandToOwner, ownerToOwnerCommand);
     }
 
     @Test

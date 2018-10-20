@@ -12,10 +12,18 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
 //@Builder
+@AllArgsConstructor
 @Entity
 public class Car extends BasicEntity{
+
+    public Car(Long id, Set<Visit> visits, CarType carType, Owner owner, int age) {
+        super(id);
+        this.visits = visits;
+        this.carType = carType;
+        this.owner = owner;
+        this.age = age;
+    }
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "car")
     private Set<Visit> visits = new HashSet<>();
@@ -30,6 +38,6 @@ public class Car extends BasicEntity{
 
     public String toString() {
 
-        return carType + " właściciel " + owner;
+        return "" + carType;
     }
 }

@@ -12,17 +12,16 @@ import org.springframework.stereotype.Component;
 public class CarCommandToCar implements Converter<CarCommand, Car> {
     private OwnerCommandToOwner ownerConverter;
     private CarTypeCommandToCarType carTypeConverter;
-    private VisitCommandToVisit visitConverter;
 
-    public CarCommandToCar(OwnerCommandToOwner ownerConverter, CarTypeCommandToCarType carTypeConverter, VisitCommandToVisit visitConverter) {
+    public CarCommandToCar(OwnerCommandToOwner ownerConverter, CarTypeCommandToCarType carTypeConverter) {
         this.ownerConverter = ownerConverter;
         this.carTypeConverter = carTypeConverter;
-        this.visitConverter = visitConverter;
     }
 
-    @Override
+
     @Synchronized
     @Nullable
+    @Override
     public Car convert(CarCommand carCommand) {
         if (carCommand == null) {
             return null;
@@ -32,7 +31,6 @@ public class CarCommandToCar implements Converter<CarCommand, Car> {
         car.setOwner(ownerConverter.convert(carCommand.getOwnerCommand()));
         car.setCarType(carTypeConverter.convert(carCommand.getCarTypeCommand()));
         car.setAge(carCommand.getAge());
-        carCommand.getVisitCommands().forEach(p -> car.getVisits().add(visitConverter.convert(p)));
 
         return car;
     }

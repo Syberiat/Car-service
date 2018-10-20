@@ -11,4 +11,10 @@ public class CarTypeCommand {
 
     private String brand;
     private Long id;
+    private Long carId;
+
+    @Override
+    public String toString() {
+        return "" + brand;
+    }
 }

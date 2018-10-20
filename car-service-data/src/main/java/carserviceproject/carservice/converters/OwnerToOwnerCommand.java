@@ -10,14 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class OwnerToOwnerCommand implements Converter<Owner, OwnerCommand> {
 
-    CarToCarCommand carConverter;
 
-    public OwnerToOwnerCommand(CarToCarCommand carConverter) {
-        this.carConverter = carConverter;
-    }
-
-    @Nullable
     @Synchronized
+    @Nullable
     @Override
     public OwnerCommand convert(Owner owner) {
         if (owner == null) {
@@ -30,8 +25,7 @@ public class OwnerToOwnerCommand implements Converter<Owner, OwnerCommand> {
         ownerCommand.setPhone(owner.getPhone());
         ownerCommand.setName(owner.getName());
         ownerCommand.setLastName(owner.getLastName());
-
-        owner.getCars().forEach(p -> ownerCommand.getCarCommands().add(carConverter.convert(p)));
+        //owner.getCars().forEach(p -> ownerCommand.getCars().add(carToCarCommand.convert(p)));
 
         return ownerCommand;
     }

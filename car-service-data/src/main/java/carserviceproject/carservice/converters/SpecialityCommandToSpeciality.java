@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class SpecialityCommandToSpeciality implements Converter<SpecialityCommand, Speciality> {
 
-    @Nullable
     @Synchronized
+    @Nullable
     @Override
     public Speciality convert(SpecialityCommand o) {
 

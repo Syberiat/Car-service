@@ -11,4 +11,8 @@ public class SpecialityCommand {
 
     private String description;
     private Long id;
+
+    public String toString() {
+        return description;
+    }
 }

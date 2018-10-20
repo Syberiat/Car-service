@@ -1,5 +1,6 @@
 package carserviceproject.carservice.services.map;
 
+import carserviceproject.carservice.commands.VisitCommand;
 import carserviceproject.carservice.models.Visit;
 import carserviceproject.carservice.services.VisitServis;
 import org.springframework.context.annotation.Profile;
@@ -34,5 +35,16 @@ public class VisitServiceMapImpl extends AbstractServiceMap<Visit, Long> impleme
     @Override
     public void deleteById(Long aLong) {
         super.deleteById(aLong);
+    }
+
+
+    @Override
+    public VisitCommand findByIdVisitCommand(Long l) {
+        return null;
+    }
+
+    @Override
+    public VisitCommand saveVisitCommand(VisitCommand command) {
+        return null;
     }
 }

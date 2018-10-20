@@ -15,6 +15,14 @@ import java.time.LocalDate;
 @Entity
 public class Visit extends BasicEntity {
 
+    public Visit(Long id, LocalDate dateVisit, String description, Car car, ServiceEmployee serviceEmployee) {
+        super(id);
+        this.dateVisit = dateVisit;
+        this.description = description;
+        this.car = car;
+        this.serviceEmployee = serviceEmployee;
+    }
+
     //@Temporal()
     private LocalDate dateVisit;
     private String description;

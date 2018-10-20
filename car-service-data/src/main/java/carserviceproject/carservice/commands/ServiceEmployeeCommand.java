@@ -17,4 +17,8 @@ public class ServiceEmployeeCommand {
     private Long id;
     private String name;
     private String lastName;
+
+    public String toString() {
+        return getName() + " " + getLastName();
+    }
 }

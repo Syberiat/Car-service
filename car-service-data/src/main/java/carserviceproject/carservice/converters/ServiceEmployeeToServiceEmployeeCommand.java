@@ -11,12 +11,9 @@ import org.springframework.stereotype.Component;
 public class ServiceEmployeeToServiceEmployeeCommand implements Converter<ServiceEmployee, ServiceEmployeeCommand> {
 
     private SpecialityToSpecialityCommand specialityToSpecialityCommand;
-    private VisitToVisitCommand visitToVisitCommand;
 
-    public ServiceEmployeeToServiceEmployeeCommand(SpecialityToSpecialityCommand specialityToSpecialityCommand,
-                                                   VisitToVisitCommand visitToVisitCommand) {
+    public ServiceEmployeeToServiceEmployeeCommand(SpecialityToSpecialityCommand specialityToSpecialityCommand) {
         this.specialityToSpecialityCommand = specialityToSpecialityCommand;
-        this.visitToVisitCommand = visitToVisitCommand;
     }
 
     @Synchronized
@@ -30,7 +27,6 @@ public class ServiceEmployeeToServiceEmployeeCommand implements Converter<Servic
         serviceEmployeeCommand.setId(serviceEmployee.getId());
         serviceEmployeeCommand.setLastName(serviceEmployee.getLastName());
         serviceEmployeeCommand.setName(serviceEmployee.getName());
-        serviceEmployee.getVisits().forEach(p -> serviceEmployeeCommand.getVisitCommands().add(visitToVisitCommand.convert(p)));
         serviceEmployee.getSpeciality().forEach(p -> serviceEmployeeCommand.getSpecialityCommands().add(specialityToSpecialityCommand.convert(p)));
 
         return serviceEmployeeCommand;

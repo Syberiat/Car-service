@@ -12,8 +12,12 @@ import java.time.LocalDate;
 public class VisitCommand {
 
     private LocalDate dateVisit;
-    private String decsription;
+    private String description;
     private CarCommand carCommand;
     private ServiceEmployeeCommand serviceEmployeeCommand;
     private Long id;
+
+    public String toString() {
+        return dateVisit + " " + description + " " + carCommand;
+    }
 }

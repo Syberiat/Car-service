@@ -12,6 +12,11 @@ import javax.persistence.Entity;
 @Entity
 public class CarType extends BasicEntity{
 
+    public CarType(Long id, String brand) {
+        super(id);
+        this.brand = brand;
+    }
+
     private String brand;
 
     public String toString() {

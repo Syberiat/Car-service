@@ -2,11 +2,14 @@ package carserviceproject.carservice.Bootstrap;
 
 import carserviceproject.carservice.models.*;
 import carserviceproject.carservice.services.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 
+@Slf4j
 @Component
 public class DataInitializer implements CommandLineRunner {
 
@@ -26,8 +29,11 @@ public class DataInitializer implements CommandLineRunner {
         this.visitServis = visitServis;
         this.carService = carService;
     }
+
+    @Transactional
     @Override
     public void run(String... args) throws Exception {
+        log.debug("Loading Bootstrap Data");
         loadData();
     }
 
@@ -61,6 +67,8 @@ public class DataInitializer implements CommandLineRunner {
         car1.setAge(5);
         car1.setOwner(owner1);
         carService.save(car1);
+        owner1.getCars().add(car1);
+        ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setName("Marysia");
@@ -75,6 +83,8 @@ public class DataInitializer implements CommandLineRunner {
         car2.setAge(3);
         car2.setOwner(owner2);
         carService.save(car2);
+        owner2.getCars().add(car2);
+        ownerService.save(owner2);
 
         ServiceEmployee se1 = new ServiceEmployee();
         se1.setName("Mateusz");

@@ -1,5 +1,6 @@
 package carserviceproject.carservice.services.map;
 
+import carserviceproject.carservice.commands.CarTypeCommand;
 import carserviceproject.carservice.models.CarType;
 import carserviceproject.carservice.services.CarTypeService;
 import org.springframework.context.annotation.Profile;
@@ -34,5 +35,15 @@ public class CarTypeServiceMapImpl extends AbstractServiceMap<CarType, Long> imp
     @Override
     public void delete(CarType object) {
         super.delete(object);
+    }
+
+    @Override
+    public CarTypeCommand saveCarTypeCommand(CarTypeCommand command) {
+        return null;
+    }
+
+    @Override
+    public CarTypeCommand findByIdCarTypeCommand(Long l) {
+        return null;
     }
 }

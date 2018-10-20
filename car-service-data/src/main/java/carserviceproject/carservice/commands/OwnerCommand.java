@@ -12,12 +12,15 @@ import java.util.Set;
 @NoArgsConstructor
 public class OwnerCommand {
 
-    private Set<CarCommand> carCommands = new HashSet<>();
     private String adress;
     private String city;
     private String phone;
     private Long id;
     private String name;
     private String lastName;
+    private Set<CarCommand> cars = new HashSet<>();
 
+    public String toString() {
+        return name + " " + lastName;
+    }
 }
